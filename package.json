@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "vitest"
+    "test": "vitest",
+    "test:integration": "vitest integration"
   },
   "dependencies": {
     "@types/node": "18.15.3",
