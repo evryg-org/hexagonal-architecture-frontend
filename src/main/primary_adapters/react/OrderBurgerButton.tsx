@@ -1,4 +1,4 @@
-import { useService } from "../react/OrderBurgerProvider";
+import { useService } from "./OrderBurgerProvider";
 
 export const OrderBurgerButton: React.FC = () => {
   const orderBurgerUseCase = useService("orderService");
