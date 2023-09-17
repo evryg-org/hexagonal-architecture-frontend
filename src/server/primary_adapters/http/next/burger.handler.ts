@@ -6,7 +6,7 @@ type BurgerHandlerError = {
   error: string;
 };
 
-export const burgerHandler =
+export const makeBurgerHandler =
   (kitchenUseCase: KitchenUseCase) =>
   async (
     req: NextApiRequest,

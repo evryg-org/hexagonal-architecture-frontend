@@ -1,4 +1,4 @@
 import { kitchenUseCase } from "@/server/live_dependencies";
-import { burgerHandler } from "@/server/primary_adapters/http/next/burger.handler";
+import { makeBurgerHandler } from "@/server/primary_adapters/http/next/burger.handler";
 
-export default burgerHandler(kitchenUseCase);
+export default makeBurgerHandler(kitchenUseCase);
