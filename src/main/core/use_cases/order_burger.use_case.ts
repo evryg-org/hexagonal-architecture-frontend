@@ -1,14 +1,12 @@
 import { OrderBurgerUseCase } from "../ports/primary/order_burger.port";
+import { BurgerRepository } from "../ports/secondary/burger_repository.port";
 
-export const makeOrderBurgerUseCase = (): OrderBurgerUseCase => {
+export const makeOrderBurgerUseCase = (
+  burgerRepository: BurgerRepository
+): OrderBurgerUseCase => {
   return {
     orderBurger(burgerOrder) {
-      return Promise.resolve({
-        bun: "sesame",
-        patty: "chicken",
-        topping: "lettuce",
-        cheese: "cheddar",
-      });
+      return burgerRepository.orderBurger(burgerOrder);
     },
   };
 };
