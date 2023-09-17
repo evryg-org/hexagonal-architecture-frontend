@@ -1,9 +1,9 @@
-import { Kitchen } from "../ports/primary/use_cases/make_burger.port";
+import { KitchenUseCase } from "../ports/primary/use_cases/make_burger.port";
 import { IngredientsRepository } from "../ports/secondary/ingredients_repository.port";
 
 export const makeKitchen = (
   ingredientsRepository: IngredientsRepository
-): Kitchen => {
+): KitchenUseCase => {
   return {
     async makeBurger() {
       const bun = await ingredientsRepository.getBuns();
