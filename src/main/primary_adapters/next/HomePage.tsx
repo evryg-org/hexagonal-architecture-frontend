@@ -2,8 +2,30 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
+import { makeInMemoryBurgerRepository } from "@/main/secondary_adapters/repositories/burger/in_memory_burger.repository";
+import { makeOrderBurgerUseCase } from "@/main/core/use_cases/order_burger.use_case";
 
 const inter = Inter({ subsets: ["latin"] });
+
+const burgerRepository = makeInMemoryBurgerRepository({ patty: "fake-beef" });
+const orderBurgerUseCase = makeOrderBurgerUseCase(burgerRepository);
+
+const orderBurger = () => {
+
+  orderBurgerUseCase
+    .orderBurger({
+      bun: "sesame",
+      cheese: "cheddar",
+      patty: "beef",
+      topping: "lettuce",
+    })
+    .then(() => {
+      window.alert("Burger ordered!");
+    })
+    .catch((error) => {
+      window.alert("Error ordering burger: " + error.message);
+    });
+};
 
 export default function Home() {
   return (
@@ -39,25 +61,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className={styles.center}>
-          <Image
-            className={styles.logo}
-            src="/next.svg"
-            alt="Next.js Logo"
-            width={180}
-            height={37}
-            priority
-          />
-          <div className={styles.thirteen}>
-            <Image
-              src="/thirteen.svg"
-              alt="13"
-              width={40}
-              height={31}
-              priority
-            />
-          </div>
-        </div>
+        <button onClick={orderBurger}>Click to order a burger!</button>
 
         <div className={styles.grid}>
           <a
