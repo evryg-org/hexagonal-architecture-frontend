@@ -4,6 +4,7 @@ import styles from "@/styles/Home.module.css";
 import { OrderBurgerButton } from "../react/OrderBurgerButton";
 
 import { Restaurant } from "../react/Restaurant";
+import { Card, CardBody, CardTitle, Cards } from "../react/card/Card";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,43 +33,44 @@ export default function Home() {
 
         <OrderBurgerButton />
 
-        <div className={styles.grid}>
-          <div className={styles.card}>
-            <h2 className={inter.className}>
+        <Cards>
+          <Card>
+            <CardTitle>
               Meat<span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
+            </CardTitle>
+            <CardBody>
               Fantastic choice, including beef, chicken and veggie.
-            </p>
-          </div>
+            </CardBody>
+          </Card>
 
-          <div className={styles.card}>
-            <h2 className={inter.className}>
+          <Card>
+            <CardTitle>
               Cheese <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
+            </CardTitle>
+            <CardBody>
               Best cheese in town, including cheddar, swiss and blue.
-            </p>
-          </div>
+            </CardBody>
+          </Card>
 
-          <div className={styles.card}>
-            <h2 className={inter.className}>
+          <Card>
+            <CardTitle>
               Bun <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
+            </CardTitle>
+            <CardBody>
               Fine selection of buns, including sesame, brioche and whole wheat.
-            </p>
-          </div>
+            </CardBody>
+          </Card>
 
-          <div className={styles.card}>
-            <h2 className={inter.className}>
+          <Card>
+            <CardTitle>
               Topping <span>-&gt;</span>
-            </h2>
-            <p className={inter.className}>
-              Don&apos;t forget the toppings, including lettuce, tomato and onion.
-            </p>
-          </div>
-        </div>
+            </CardTitle>
+            <CardBody>
+              Don&apos;t forget the toppings, including lettuce, tomato and
+              onion.
+            </CardBody>
+          </Card>
+        </Cards>
       </main>
     </Restaurant>
   );
