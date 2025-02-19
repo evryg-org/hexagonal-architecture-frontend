@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "vitest",
+    "test:integration": "vitest integration"
   },
   "dependencies": {
     "@types/node": "18.15.3",
@@ -18,5 +20,11 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.0.2"
+  },
+  "devDependencies": {
+    "node-mocks-http": "^1.13.0",
+    "ts-node": "^10.9.1",
+    "vite-tsconfig-paths": "^4.2.1",
+    "vitest": "^0.34.4"
   }
 }
